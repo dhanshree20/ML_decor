@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meghrup Linen and Décor</title>
+    <link rel="icon" type="image/png" href="images/Meghrup abstract.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+     
+      background: linear-gradient(135deg, #fef9f4, #fceee3, #f7e2d7);
+      
+      color: #333 ;
+    }
+    a { text-decoration: none; color: inherit; }
+header.main-header {
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+
+
+    .main-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 20px;
+    }
+
+.logo img {
+  height: 70px;
+  width: 200px;
+  object-fit: contain;
+  transition: all 0.4s ease-in-out;
+  filter:
+    drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4))    /* Thicker black shadow */
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)); /* Stronger white glow */
+  border-radius: 10px;
+  opacity: 0.85; /* Reduced opacity */
+}
+
+/* Glow on hover */
+.logo img:hover {
+  transform: scale(1.05);
+  filter:
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5))    /* Even thicker black shadow */
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.9)); /* Stronger white glow */
+  opacity: 1; /* Full opacity on hover */
+}
+
+@media (max-width: 992px) {
+  .logo img {
+    height: 60px !important;
+    width: 190px !important;
+  }
+}
+
+
+    .logo .sub {
+      font-size: 16px;
+      font-weight: 600;
+      color: #7d5a3c;
+      text-shadow: 1px 1px 0 #e0d1bc, 2px 2px 0 #d6c0a5;
+    }
+
+    nav.nav-menu {
+      display: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      display: block;
+    }
+
+    .mobile-sidebar {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 260px;
+      height: 100%;
+      background: linear-gradient(135deg, #fff5ec, #ffe7d1, #fbd6b4);
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+      padding: 25px 18px;
+      z-index: 2500;
+      transition: left 0.3s ease-in-out;
+      overflow-y: auto;
+    }
+
+    .mobile-sidebar.active {
+      left: 0;
+    }
+
+    .mobile-sidebar .close-btn {
+      font-size: 24px;
+      cursor: pointer;
+      float: right;
+      color: #a67c52;
+      margin-bottom: 20px;
+    }
+
+    .mobile-sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .mobile-sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .mobile-sidebar li > a {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #5a524c;
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .mobile-sidebar li > a:hover {
+      background-color: #f4e9dd;
+    }
+
+    .dropdown-mobile {
+      display: none;
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 2px solid #e6d5c0;
+    }
+
+    .dropdown-mobile.open {
+      display: block;
+    }
+
+    .dropdown-mobile a {
+      display: block;
+      padding: 6px 0;
+      font-weight: 400;
+      color: #5a524c;
+    }
+
+    .dropdown-mobile a:hover {
+      background-color: #e3d3c0;
+      color: #a67c52;
+      border-radius: 4px;
+      padding-left: 6px;
+    }
+
+    /* DESKTOP MODE */
+    @media (min-width: 993px) {
+      .sidebar-toggle,
+      .mobile-sidebar {
+        display: none !important;
+      }
+
+      nav.nav-menu {
+        display: block;
+      }
+
+      nav.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap:16px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  padding: 0px 50px;
+  font-size: 15px;
+  color: white;
+  align-items: center;
+}
+
+      nav.nav-menu ul li {
+        position: relative;
+        cursor: pointer;
+        padding: 8px 14px;
+        border-radius: 6px;
+      }
+
+      nav.nav-menu ul li:hover {
+        color: #a67c52;
+        background-color: #f4e9dd;
+      }
+
+      nav.nav-menu ul li a {
+        color: inherit;
+      }
+
+      .icon {
+        margin-left: 6px;
+        font-size: 10px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fffefc;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        min-width: 240px;
+        padding: 10px 0;
+        z-index: 999;
+      }
+
+      nav.nav-menu ul li:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 10px 20px;
+        font-weight: 400;
+        color: #5a524c;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #e3d3c0;
+        color: #a67c52;
+      }
+    }
+.logo.hide {
+  display: none !important;
+}
+
+  </style>
+
+
+<header class="main-header">
+  <div class="container">
+<a href="index.html" style="text-decoration: none; color: inherit;">
+<div class="logo" id="logo">
+
+  <img src="images/FINAL_CROP_LOGO.png" alt="Meghrup Linen and Décor" style="height: 70px;width: 200px;" />
+</div>
+
+</a>
+
+
+    <!-- Mobile Toggle Button -->
+    <button class="sidebar-toggle" onclick="toggleSidebarMobile()">
+      <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-menu">
+      <ul>
+        <li>
+          <a href="Bed_linens.html">BED LINENS</a><i class="fa-solid fa-chevron-down icon"></i>
+          <div class="dropdown-content">
+
+<a href="Bed_linens_details_01.html">Polycotton Bedsheet (210 TC)</a>
+<a href="Bed_linens_details_02.html">Cotton Stripes Bedsheet 210 TC</a>
+<a href="Bed_linens_details_03.html">Cotton Stripes Bedsheet 300 TC</a>
+<a href="Bed_linens_details_04.html">Cotton Stripes Bedsheet 400 TC</a>
+<a href="Bed_linens_details_05.html">Plain Cotton Bedsheet (210 TC)</a>
+<a href="Bed_linens_details_06.html">Plain Cotton Bedsheet (300 TC)</a>
+<a href="Bed_linens_details_07.html">Plain Cotton Bedsheet (400 TC)</a>
+<a href="Bed_linens_details_08.html">Colour Stripes Bedsheet</a>
+<a href="Bed_linens_details_11.html">Printed Bedsheet</a>
+
+          </div>
+        </li>
+        <li>
+              <a href="PILLO_COVER.html">PILLOW COVERS </a><i class="fa-solid fa-chevron-down icon"></i>
+          <div class="dropdown-content">
+            <strong style="padding:8px 20px;color:#a67c52;">Pillow Covers</strong>
+<a href="PILLO_COVER_detail_09.html">Polycotton Pillow Cover </a>
+<a href="PILLO_COVER_detail_01.html">Cotton Stripes Pillow Cover 210 TC </a>
+<a href="PILLO_COVER_detail_02.html">Cotton Stripes Pillow Cover 300 TC </a>
+
+<a href="PILLO_COVER_detail_03.html">Cotton Stripes Pillow Cover 400 TC</a>
+<a href="PILLO_COVER_detail_04.html">Plain Cotton Pillow Cover 210 TC </a>
+
+<a href="PILLO_COVER_detail_05.html">Plain Cotton Pillow Cover 300 TC </a>
+<a href="PILLO_COVER_detail_06.html">Plain Cotton Pillow Cover 400 TC </a>
+<a href="PILLO_COVER_detail_07.html">Colour Stripes Pillow Cover</a>
+<a href="PILLO_COVER_detail_08.html">Printed Pillow Cover</a>
+
+           
+
+          </div>
+        </li>
+        <li>
+             <a href="Duet&Comferter.html">DUET & COMFERTER</a><i class="fa-solid fa-chevron-down icon"></i>
+       <div class="dropdown-content">
+<a href="Duet&Comferter_details_01.html">Duet / Comforter – Single</a>
+<a href="Duet&Comferter_details_02.html">Duet / Comforter – Double</a>
+          </div>
+        </li>
+        <li>
+          <a href="BATH_TOWEL.html">BATH TOWEL</a><i class="fa-solid fa-chevron-down icon"></i>
+          <div class="dropdown-content">
+<a href="BATH_TOWEL_detail_01.html">Bath Towel – Regular (30×60)</a>
+<a href="BATH_TOWEL_detail_02.html">Bath Towel – 425 GSM (30×60)</a>
+<a href="BATH_TOWEL_detail_03.html">Bath Towel – 500 GSM (30×60)</a>
+<a href="BATH_TOWEL_detail_04.html">Bath Towel – 550 GSM (30×60)</a>
+<a href="BATH_TOWEL_detail_05.html">Bath Towel – 600 GSM (30×60)</a>
+<a href="BATH_TOWEL_detail_07.html">100% Pure Cotton Towel</a>
+<a href="BATH_TOWEL_detail_07.html">100% Pure Cotton Towel</a>
+
+          </div>
+        </li>
+        <li>
+          <a href="OTHERS.html">OTHERS</a><i class="fa-solid fa-chevron-down icon"></i>
+          <div class="dropdown-content">
+<a href="bonded_supersoft_mattress.html">Bonded Supersoft Mattress</a>
+<a href="spring_mattress.html">Spring Mattress</a>
+<a href="curtain_balckout.html">Curtains - Blackout</a>
+<a href="curtain_printed.html">Curtains – Printed</a>
+          </div>
+        </li>
+       <li>
+  <a href="#">MORE</a><i class="fa-solid fa-chevron-down icon"></i>
+  <div class="dropdown-content" style="min-width: 153px;">
+    <a href="index.html"><i class="fa fa-home" style="margin-right: 8px; color: #a67c52;"></i>Home</a>
+    <a href="Aboutus.html"><i class="fa fa-info-circle" style="margin-right: 8px; color: #a67c52;"></i>About Us</a>
+    <a href="contact.html"><i class="fa fa-phone" style="margin-right: 8px; color: #a67c52;"></i>Contact Us</a>
+  </div>
+</li>
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Sidebar for Mobile -->
+<div class="mobile-sidebar" id="mobileSidebar">
+  <div class="close-btn" onclick="toggleSidebarMobile()">×</div>
+
+
+ <img src="images/FINAL_CROP_LOGO.png" alt="Meghrup Logo" style="max-width: 140px; margin-bottom: 40px;">
+  <ul>
+    <li>
+      <a href="Bed_linens.html" onclick="toggleDropdownMobile('drop1', event)">Bed Linens <i class="fa fa-chevron-down"></i></a>
+      <div class="dropdown-mobile" id="drop1">
+<a href="Bed_linens_details_01.html">Polycotton Bedsheet (210 TC)</a>
+<a href="Bed_linens_details_02.html">Cotton Stripes Bedsheet 210 TC</a>
+<a href="Bed_linens_details_03.html">Cotton Stripes Bedsheet 300 TC</a>
+<a href="Bed_linens_details_04.html">Cotton Stripes Bedsheet 400 TC</a>
+<a href="Bed_linens_details_05.html">Plain Cotton Bedsheet (210 TC)</a>
+<a href="Bed_linens_details_06.html">Plain Cotton Bedsheet (300 TC)</a>
+<a href="Bed_linens_details_07.html">Plain Cotton Bedsheet (400 TC)</a>
+<a href="Bed_linens_details_08.html">Colour Stripes Bedsheet</a>
+<a href="Bed_linens_details_11.html">Printed Bedsheet</a>
+      </div>
+    </li>
+
+    <li>
+      <a href="PILLO_COVER.html" onclick="toggleDropdownMobile('drop2', event)">PILLOW COVERS<i class="fa fa-chevron-down"></i></a>
+      <div class="dropdown-mobile" id="drop2">
+        <strong style="color:#a67c52;">Pillow Covers</strong>
+<a href="PILLO_COVER_detail_01.html">Cotton Stripes Pillow Cover 210 TC </a>
+<a href="PILLO_COVER_detail_02.html">Cotton Stripes Pillow Cover 300 TC </a>
+
+<a href="PILLO_COVER_detail_03.html">Cotton Stripes Pillow Cover 400 TC</a>
+<a href="PILLO_COVER_detail_04.html">Plain Cotton Pillow Cover 210 TC </a>
+
+<a href="PILLO_COVER_detail_05.html">Plain Cotton Pillow Cover 300 TC </a>
+<a href="PILLO_COVER_detail_06.html">Plain Cotton Pillow Cover 400 TC </a>
+
+        <strong style="color:#a67c52;">Pillows & Cushions</strong>
+       
+      </div>
+    </li>
+
+    <li>
+      <a href="Duet&Comferter.html" onclick="toggleDropdownMobile('drop3', event)">DUET & COMFERTER<i class="fa fa-chevron-down"></i></a>
+      <div class="dropdown-mobile" id="drop3">
+<a href="Duet&Comferter_details_01.html">Duet / Comforter – Single</a>
+<a href="Duet&Comferter_details_02.html">Duet / Comforter – Double</a>
+
+      </div>
+    </li>
+
+    <li>
+      <a href="BATH_TOWEL.html" onclick="toggleDropdownMobile('drop4', event)">BATH TOWEL <i class="fa fa-chevron-down"></i></a>
+      <div class="dropdown-mobile" id="drop4">
+<a href="BATH_TOWEL_detail_01.html">Bath Towel – Regular (30×60)</a>
+<a href="BATH_TOWEL_detail_02.html">Bath Towel – 425 GSM (30×60)</a>
+<a href="BATH_TOWEL_detail_03.html">Bath Towel – 500 GSM (30×60)</a>
+<a href="BATH_TOWEL_detail_04.html">Bath Towel – 550 GSM (30×60)</a>
+<a href="BATH_TOWEL_detail_05.html">Bath Towel – 600 GSM (30×60)</a>
+<a href="BATH_TOWEL_detail_07.html">100% Pure Cotton Towel</a>
+
+      </div>
+    </li>
+
+    <li>
+      <a href="OTHERS.html" onclick="toggleDropdownMobile('drop5', event)">Others <i class="fa fa-chevron-down"></i></a>
+   
+             <div class="dropdown-mobile" id="drop5">
+        <a href="HAND_TOWEL.html">HAND TOWEL</a>
+        <a href="FACE_TOWEL.html">FACE TOWEL</a>
+        <a href="POOL_TOWEL.html">POOL TOWE</a>
+        <a href="SHOWER_CURTONS.html">SHOWER CURTONS</a>
+      </div>
+ 
+    </li>
+
+    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="Aboutus.html"><i class="fa fa-info-circle"></i> About Us</a></li>
+    <li><a href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
+  </ul>
+</div>
+
+
+<script>
+  function toggleSidebarMobile() {
+    const sidebar = document.getElementById('mobileSidebar');
+    const logo = document.getElementById('logo');
+
+    sidebar.classList.toggle('active');
+
+    if (logo) {
+      logo.classList.toggle('hide');
+    }
+  }
+
+  function toggleDropdownMobile(id, event) {
+    event.preventDefault();
+    const dropdown = document.getElementById(id);
+    const all = document.querySelectorAll('.dropdown-mobile');
+    all.forEach(el => {
+      if (el !== dropdown) el.classList.remove('open');
+    });
+    dropdown.classList.toggle('open');
+  }
+
+  // CLOSE SIDEBAR WHEN CLICKING OUTSIDE
+  document.addEventListener('click', function (event) {
+    const sidebar = document.getElementById('mobileSidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+    const isSidebarOpen = sidebar.classList.contains('active');
+
+    if (
+      isSidebarOpen &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('active');
+      const logo = document.getElementById('logo');
+      if (logo) logo.classList.remove('hide');
+    }
+  });
+
+  // Animations using GSAP
+  window.addEventListener("DOMContentLoaded", () => {
+    gsap.from(".top-bar", { y: -30, opacity: 0, duration: 1, ease: "power3.out" });
+    gsap.from(".main-header", { y: -60, opacity: 0, duration: 1.2, delay: 0.2, ease: "power3.out" });
+    gsap.from("nav.nav-menu li", {
+      y: -25, scale: 0.95, rotation: -2, opacity: 0,
+      duration: 1.1, delay: 0.5,
+      stagger: { each: 0.1 },
+      ease: "elastic.out(1, 0.5)"
+    });
+
+    const dropdowns = document.querySelectorAll(".dropdown-content");
+    dropdowns.forEach(dropdown => {
+      const parent = dropdown.closest("li");
+      parent.addEventListener("mouseenter", () => {
+        gsap.killTweensOf(dropdown);
+        dropdown.style.display = "block";
+        gsap.fromTo(dropdown, { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" });
+      });
+      parent.addEventListener("mouseleave", () => {
+        gsap.to(dropdown, {
+          y: -10, opacity: 0, duration: 0.3, ease: "power2.in",
+          onComplete: () => dropdown.style.display = "none"
+        });
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Hero Section with Slider -->
+<section class="hero-slider-section" style="position: relative; overflow: hidden; font-family: 'Segoe UI', sans-serif;">
+  <div class="slider" style="position: relative; height: 100vh; width: 100%;">
+    <!-- SLIDE 1 -->
+    <div class="slide active" style="background-image: url('images/BANNER___01111.png'); background-size: cover; background-position: center; height: 100vh; width: 100%; position: absolute; top: 0; left: 0; transition: opacity 1s; opacity: 1;">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h2>Transform Your Space with Elegant Bed Linen</h2>
+        <p>Premium quality bedding solutions for hotels & homes.</p>
+        <a href="Bed_linens.html">OUR PRODUCTS</a>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide" style="background-image: url('images/BANNERR_02222222.png'); background-size: cover; background-position: center; height: 100vh; width: 100%; position: absolute; top: 0; left: 0; transition: opacity 1s; opacity: 0;">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h2>Soft Towels. Perfect Finish. Hotel-Grade Quality.</h2>
+        <p>Every thread crafted for luxury & durability.</p>
+       <a href="Bed_linens.html">OUR PRODUCTS</a>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide" style="background-image: url('images/BANNERR__03333.png'); background-size: cover; background-position: center; height: 100vh; width: 100%; position: absolute; top: 0; left: 0; transition: opacity 1s; opacity: 0;">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h2>Mattress Protectors & Duets for Every Need</h2>
+        <p>Long-lasting comfort for hospitality excellence.</p>
+      <a href="Bed_linens.html">OUR PRODUCTS</a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .slide-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .slide-content {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      padding: 0 5%;
+      width: 100%;
+      max-width: 900px;
+      opacity: 0;
+    }
+
+    .slide-content h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .slide-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .slide-content a {
+      padding: 1rem 2.5rem;
+    background: linear-gradient(to right, #e6c8aa, #a67c52, #6e4a2d);
+
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: 0.3s ease;
+      display: inline-block;
+      transform: scale(1);
+    }
+
+    .slide-content a:hover {
+      background-color: #8b633e;
+    }
+
+    @media (max-width: 768px) {
+      .slide-content h2 {
+        font-size: 2rem;
+      }
+
+      .slide-content p {
+        font-size: 1.2rem;
+      }
+
+      .slide-content a {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+      }
+
+      .slide-content {
+        top: 40%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .slide-content p {
+        font-size: 1rem;
+      }
+
+      .slide-content a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+      }
+
+      .slide-content {
+        top: 43%;
+        padding: 0 8%;
+      }
+    }
+    @media (max-width: 768px) {
+  .slider,
+  .slide {
+    height: 60vh !important; /* adjust height as needed */
+  }
+}
+
+@media (max-width: 480px) {
+  .slider,
+  .slide {
+    height: 70vh !important; /* even smaller height for very small screens */
+  }
+}
+
+  </style>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        const content = slide.querySelector('.slide-content');
+        if (i === index) {
+          slide.style.opacity = '1';
+          content.style.opacity = '1';
+
+          // Animate with GSAP
+          gsap.fromTo(content, { y: 50, opacity: 0 }, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out'
+          });
+
+          // Pop effect for button
+          const button = content.querySelector('a');
+          gsap.fromTo(button, { scale: 0.8 }, {
+            scale: 1.1,
+            duration: 0.4,
+            yoyo: true,
+            repeat: 1,
+            ease: 'power1.inOut',
+            delay: 0.6
+          });
+
+        } else {
+          slide.style.opacity = '0';
+          content.style.opacity = '0';
+        }
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    setInterval(nextSlide, 5000); // 5 sec per slide
+
+    // Show first slide content on load
+    window.addEventListener('load', () => {
+      showSlide(current);
+    });
+  </script>
+</section>
+
+
+
+
+
+
+
+
+
+<section style="font-family: 'Segoe UI', sans-serif; padding: 50px 20px; text-align: center; background: linear-gradient(135deg, #fef9f4, #fceee3, #f7e2d7);">
+  <div style="background: linear-gradient(to right, #e6c8aa, #a67c52, #6e4a2d); padding: 0px 0; border-radius: 8px;">
+    <h2 style="color: white; font-size: 2.2rem; margin: 0; letter-spacing: 1px;">SHOP BY CATEGORY</h2>
+  </div>
+
+  <h3 style="margin-top: 35px; font-size: 1.7rem; font-weight: 600; color: #2f2f2f;">BED LINENS</h3>
+  <div style="margin: 15px auto 40px; width: 80px; height: 3px; background: linear-gradient(135deg, #fffefc, #fdf5ee, #f7e9dc);"></div>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 53px; max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Card Template -->
+    <a href="Bed_linens.html" class="category-card">
+  <img src="images/Bedsheet.webp" alt="Bedsheet">
+  <div class="category-title">Bedsheet</div>
+  <div class="underline"></div>
+</a>
+
+<a href="PILLO_COVER.html" class="category-card">
+  <img src="images/Pillow Cover.webp" alt="Pillow Cover">
+  <div class="category-title">Pillow Cover</div>
+  <div class="underline"></div>
+</a>
+
+<a href="PILLO.HTML" class="category-card">
+  <img src="images/Pillow Protector.webp" alt="Pillow">
+  <div class="category-title">Pillow</div>
+  <div class="underline"></div>
+</a>
+
+<a href="COUSSION.html" class="category-card">
+  <img src="images/Cushion.webp" alt="Cushion">
+  <div class="category-title">Cushion</div>
+  <div class="underline"></div>
+</a>
+
+<a href="Duet&Comferter.html" class="category-card">
+  <img src="images/Duvet.webp" alt="Duvet & Comforter">
+  <div class="category-title">Duvet & Comforter</div>
+  <div class="underline"></div>
+</a>
+
+<a href="DUVET_COVER.html" class="category-card">
+  <img src="images/Duvet Cover.webp" alt="Duvet Cover">
+  <div class="category-title">Duvet Cover</div>
+  <div class="underline"></div>
+</a>
+
+<a href="Matress_Cover.html" class="category-card">
+  <img src="images/Mattress Protector.webp" alt="Mattress Protector">
+  <div class="category-title">Mattress Protector</div>
+  <div class="underline"></div>
+</a>
+
+<a href="Pillow_protector.html" class="category-card">
+  <img src="images/Pillow Protector.webp" alt="Pillow Protector"> 
+  <div class="category-title">Pillow Protector</div>
+  <div class="underline"></div>
+</a>
+
+<a href="BED_RUNNER.html" class="category-card">
+  <img src="images/Bed Runner.webp" alt="Bed Runner">
+  <div class="category-title">Bed Runner</div>
+  <div class="underline"></div>
+</a>
+
+
+  </div>
+
+  <!-- Style -->
+  <style>
+    .category-card {
+      cursor: pointer;
+      background: white;
+      border: 1px solid #d7c4b2;
+      border-radius: 12px;
+      padding: 20px;
+      width: 160px;
+      box-shadow: 0 4px 12px rgba(166, 124, 82, 0.25);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .category-card img {
+      width: 100px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .category-title {
+      margin-top: 15px;
+      font-weight: 500;
+      color: #15803d;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .underline {
+      width: 30px;
+      height: 3px;
+      background: black;
+      margin: 8px auto 0;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(166, 124, 82, 0.35);
+    }
+
+    .category-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .category-card:hover .category-title {
+      color: #1a3b28;
+    }
+
+    @media (max-width: 768px) {
+      .category-card {
+        width: 45% !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category-card {
+        width: 90% !important;
+      }
+    }
+  </style>
+</section>
+<section style="font-family: 'Segoe UI', sans-serif; padding: 50px 20px; text-align: center; background: linear-gradient(135deg, #fef9f4, #fceee3, #f7e2d7);">
+ 
+
+  <h3 style="margin-top: 35px; font-size: 1.7rem; font-weight: 600; color: #2f2f2f;">BATH LINENS</h3>
+  <div style="margin: 15px auto 40px; width: 80px; height: 3px; background: linear-gradient(135deg, #fffefc, #fdf5ee, #f7e9dc);"></div>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 53px; max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Card Template -->
+  <a href="BATH_TOWEL.html" class="category-card">
+  <img src="images/Bath Towel.webp" alt="Bath Towel">
+  <div class="category-title">Bath Towel</div>
+  <div class="underline"></div>
+</a>
+
+<a href="HAND_TOWEL.html" class="category-card">
+  <img src="images/Hand Towel.webp" alt="Hand Towel">
+  <div class="category-title">Hand Towel</div>
+  <div class="underline"></div>
+</a>
+
+<a href="FACE_TOWEL.html" class="category-card">
+  <img src="images/Face Towel.webp" alt="Face Towel">
+  <div class="category-title">Face Towel</div>
+  <div class="underline"></div>
+</a>
+
+<a href="bathrobe.html" class="category-card">
+  <img src="images/bathrobe.png" alt="Face Towel">
+  <div class="category-title">Bathrobe</div>
+  <div class="underline"></div>
+</a>
+
+<a href="POOL_TOWEL.html" class="category-card">
+  <img src="images/Pool Towel.webp" alt="Pool Towel">
+  <div class="category-title">Pool Towel</div>
+  <div class="underline"></div>
+</a>
+
+
+
+<a href="SHOWER_CURTONS.html" class="category-card">
+  <img src="images/Shower Curtain (1).webp" alt="Shower Curtain">
+  <div class="category-title">Shower Curtain</div>
+  <div class="underline"></div>
+</a>
+
+
+<!-- 
+    <div class="category-card">
+      <img src="images/Disposable Slipper.webp" alt="Pillow Protector">
+      <div class="category-title">Disposable Slipper</div>
+      <div class="underline"></div>
+    </div> -->
+
+   
+
+  </div>
+
+  <!-- Style -->
+  <style>
+    .category-card {
+      cursor: pointer;
+      background: white;
+      border: 1px solid #d7c4b2;
+      border-radius: 12px;
+      padding: 20px;
+      width: 193px;
+      box-shadow: 0 4px 12px rgba(166, 124, 82, 0.25);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .category-card img {
+      width: 100px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .category-title {
+      margin-top: 15px;
+      font-weight: 500;
+      color: #15803d;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .underline {
+      width: 30px;
+      height: 3px;
+      background: black;
+      margin: 8px auto 0;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(166, 124, 82, 0.35);
+    }
+
+    .category-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .category-card:hover .category-title {
+      color: #1a3b28;
+    }
+
+    @media (max-width: 768px) {
+      .category-card {
+        width: 45% !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category-card {
+        width: 90% !important;
+      }
+    }
+  </style>
+</section>
+
+<section style="background: linear-gradient(to right,#a67c52, #6e4a2d); padding: 50px 20px; color: white; font-family: 'Segoe UI', sans-serif;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1200px; margin: 0 auto;">
+
+    <!-- Best Quality -->
+    <div style="flex: 1 1 220px; text-align: center; max-width: 260px;">
+      <i class="fas fa-thumbs-up" style="font-size: 60px; margin-bottom: 20px; color: #ffffff;"></i>
+      <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Best Quality</h3>
+      <p style="font-size: 0.95rem; color: #f1f1f1;">
+        Our linens are crafted from premium fabrics, ensuring durability, comfort, and elegance. Trusted by leading hoteliers, our products meet the highest standards of quality.
+      </p>
+    </div>
+
+    <!-- Wholesale Pricing -->
+    <div style="flex: 1 1 220px; text-align: center; max-width: 260px;">
+      <i class="fas fa-tags" style="font-size: 60px; margin-bottom: 20px; color: #ffffff;"></i>
+      <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Wholesale Pricing</h3>
+      <p style="font-size: 0.95rem; color: #f1f1f1;">
+        Enjoy unbeatable pricing tailored for bulk buyers. <span style="color: #22c55e;">Learn more</span> about our <span style="color: #22c55e;">wholesale pricing</span> and how we ensure maximum value for your investment.
+      </p>
+    </div>
+
+    <!-- Custom Solutions -->
+    <div style="flex: 1 1 220px; text-align: center; max-width: 260px;">
+      <i class="fas fa-puzzle-piece" style="font-size: 60px; margin-bottom: 20px; color: #ffffff;"></i>
+      <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Custom Solutions</h3>
+      <p style="font-size: 0.95rem; color: #f1f1f1;">
+        Need something unique? We offer tailored linen and décor solutions to fit your brand, budget, and requirements. <span style="color: #22c55e;">Contact us</span> to get your custom quote today.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- Include GSAP Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<section id="why-choose-us" style="background: linear-gradient(135deg, #fffefc, #fdf5ee, #f7e9dc); padding: 60px 20px; color:#333; font-family: 'Poppins', sans-serif; text-align: center;">
+  <h2 style="font-size: 36px; margin-bottom: 40px;">Why Choose Us</h2>
+  
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1200px; margin: auto;">
+    <div class="reason" style="flex: 1 1 250px; min-width: 250px; max-width: 300px; padding: 20px;">
+      <div style="font-size: 40px; margin-bottom: 15px;">💎</div>
+      <h3 style="font-size: 20px; margin-bottom: 10px;">Premium Quality</h3>
+      <p style="font-size: 14px; line-height: 1.6;">We use only the finest materials ensuring long-lasting beauty and durability.</p>
+    </div>
+
+    <div class="reason" style="flex: 1 1 250px; min-width: 250px; max-width: 300px; padding: 20px;">
+      <div style="font-size: 40px; margin-bottom: 15px;">🧵</div>
+      <h3 style="font-size: 20px; margin-bottom: 10px;">Tailored Craftsmanship</h3>
+      <p style="font-size: 14px; line-height: 1.6;">Every product is crafted with attention to detail and a personal touch.</p>
+    </div>
+
+    <div class="reason" style="flex: 1 1 250px; min-width: 250px; max-width: 300px; padding: 20px;">
+      <div style="font-size: 40px; margin-bottom: 15px;">🚚</div>
+      <h3 style="font-size: 20px; margin-bottom: 10px;">Reliable Delivery</h3>
+      <p style="font-size: 14px; line-height: 1.6;">Timely and safe delivery to your doorstep, every time you order.</p>
+    </div>
+
+    <div class="reason" style="flex: 1 1 250px; min-width: 250px; max-width: 300px; padding: 20px;">
+      <div style="font-size: 40px; margin-bottom: 15px;">💬</div>
+      <h3 style="font-size: 20px; margin-bottom: 10px;">Customer Support</h3>
+      <p style="font-size: 14px; line-height: 1.6;">Our team is always ready to assist you with your queries and orders.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animate each reason block with GSAP
+  gsap.from(".reason", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.out"
+  });
+</script>
+
+
+
+
+
+
+<!-- WhatsApp Floating Button with Pulse Animation -->
+<div style="
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  animation: popup 1.5s ease-in-out infinite;
+">
+  <a href="https://wa.me/9146428456?text=Hello%2C%20I%20am%20interested%20in%20your%20Products." 
+     target="_blank" 
+     title="Chat on WhatsApp">
+    <img src="images/Whatsapp.png" 
+         alt="WhatsApp" 
+         style="
+           width: 60px;
+           height: 60px;
+           border-radius: 50%;
+           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+           transition: transform 0.3s ease;
+        " 
+        onmouseover="this.style.transform='scale(1.2)'" 
+        onmouseout="this.style.transform='scale(1)'">
+  </a>
+</div>
+
+<style>
+  @keyframes popup {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+</style>
+
+
+<!-- Include GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<section id="about-us" style="background: linear-gradient(135deg, #fffefc, #fdf5ee, #f7e9dc); padding: 60px 20px; font-family: 'Poppins', sans-serif; color: #444;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px;">
+    
+    <!-- Company Image -->
+  <div style="flex: 1; min-width: 280px; max-width: 500px; perspective: 1200px;">
+  <div style="width: 89%; max-height: 400px; border-radius: 20px; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease; transform-style: preserve-3d; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);"
+       onmouseover="this.style.transform='rotateY(15deg) rotateX(5deg) scale(1.03)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.3)'"
+       onmouseout="this.style.transform='rotateY(0deg) rotateX(0deg) scale(1)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)'">
+    <img src="images/ABOUT US.webp" alt="Meghrup Linen And Decor"
+         style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 20px;" />
+  </div>
+</div>
+
+
+    
+    <!-- Company Text -->
+    <div style="flex: 1; min-width: 280px;">
+      <h2 style="font-size: 32px; margin-bottom: 20px;">About Us</h2>
+      <p style="font-size: 18px; line-height: 1.6;">
+        <strong>Meghrup Linen And Decor</strong>, established in the year <strong>2016</strong> in Pune, Maharashtra, has grown to become a trusted name in home textiles and decor. We are proud to be one of the foremost <strong>Wholesalers</strong> of premium quality <strong>Bed Sheets, Cotton Towels, Window Curtains</strong>, and more.
+      </p>
+      <p style="font-size: 18px; margin-top: 15px; line-height: 1.6;">
+        Our commitment to quality and design has earned us a loyal clientele across the region. We aim to bring comfort and style to every home we serve.
+      </p>
+
+      <!-- Read More Button -->
+      <div style="margin-top: 30px;">
+        <a href="Aboutus.html" style="text-decoration: none; font-size: 16px; padding: 12px 25px;     background: linear-gradient(to right, #e6c8aa, #a67c52, #6e4a2d); color: white; border-radius: 30px; transition: background 0.3s ease; display: inline-block;">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GSAP Animation Script -->
+<script>
+  gsap.from("#about-us h2", {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+  gsap.from("#about-us p", {
+    opacity: 0,
+    y: 30,
+    delay: 0.5,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.out"
+  });
+
+  gsap.from("#about-us img", {
+    opacity: 0,
+    scale: 0.8,
+    delay: 0.3,
+    duration: 1,
+    ease: "back.out(1.7)"
+  });
+
+  gsap.from("#about-us a", {
+    opacity: 0,
+    y: 20, 
+    delay: 1,
+    duration: 1,
+    ease: "power2.out"
+  });
+</script>
+
+
+
+
+<section id="our-clients" style="padding: 60px 20px; background: linear-gradient(135deg, #fef9f4, #f4e5d6); font-family: 'Poppins', sans-serif; color: #3a2f2f; text-align: center;">
+  <style>
+    @keyframes scrollRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scrollLeft {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  .slider-container {
+    overflow: hidden;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .slider-track {
+    display: flex;
+    width: max-content;
+    gap: 25px;
+    animation: scrollRight 30s linear infinite; /* 🔧 duration set here */
+  }
+
+  .slider-track.reverse {
+    animation: scrollLeft 30s linear infinite; /* 🔧 duration set here */
+  }
+
+  .slider-container:hover .slider-track,
+  .slider-container:hover .slider-track.reverse {
+    animation-play-state: paused;
+  }
+
+  .client {
+    flex: 0 0 250px;
+    height: 200px;
+    padding: 20px;
+    background: #fff no-repeat center center / cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .client::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+  }
+
+  .client span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .client-1  { background-image: url("SOURCE/Shaurya.jpg"); }
+  .client-2  { background-image: url("SOURCE/EXCLENCE.jpg"); }
+  .client-3  { background-image: url("SOURCE/Client_Kuber_Mahabaleshwar.jpg"); }
+  .client-4  { background-image: url("SOURCE/Aarya_Resort_Mahabaleshwar.jpg"); }
+  .client-5  { background-image: url("SOURCE/AGY_Hotels_Pune.jpg"); }
+  .client-6  { background-image: url("SOURCE/AY_Plus_Golden_Leaf_Pune.jpg"); }
+  .client-7  { background-image: url("SOURCE/Ashok_Deluxe_Hotel.jpg"); }
+  .client-8  { background-image: url("SOURCE/Mukesh_Residency_Pune.jpg"); }
+  .client-9  { background-image: url("SOURCE/Hotel_Kokanratna_Pune.jpeg"); }
+  .client-10 { background-image: url("SOURCE/Hotel_Karna.jpg"); }
+  .client-11 { background-image: url("SOURCE/Kohinoor_Pune.jpg"); }
+  .client-12 { background-image: url("SOURCE/Kunal_Palace_Ahmednagar.jpg"); }
+  .client-13 { background-image: url("SOURCE/Hotel_Ashoka_Ahmednagar.jpg"); }
+  .client-14 { background-image: url("SOURCE/Shiv_Srushti_Agro_Tourism_Tapola.jpg"); }
+  .client-15 { background-image: url("SOURCE/Riverview_Tapola.jpg"); }
+  .client-16 { background-image: url("SOURCE/Hotel_River_Orchid_Tapola.jpg"); }
+  .client-17 { background-image: url("SOURCE/Hotel_Karna.jpg"); }
+
+  @media (max-width: 768px) {
+    .client {
+      flex: 0 0 180px;
+      height: 150px;
+      font-size: 14px;
+    }
+
+    .slider-track {
+      animation-duration: 50s !important; /* 🔧 slowed down */
+    }
+
+    .slider-track.reverse {
+      animation-duration: 50s !important; /* 🔧 slowed down */
+    }
+  }
+  </style>
+
+  <h2 style="font-size: 38px; color: #333; font-weight: 700; margin-bottom: 40px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
+    Our Esteemed Clients
+  </h2>
+
+  <!-- Slider 1 -->
+  <div class="slider-container">
+    <div class="slider-track">
+      <!-- First batch -->
+      <div class="client client-1"><span>Hotel Shourya, Pune</span></div>
+      <div class="client client-2"><span>JS Excellence, Mahabaleshwar</span></div>
+      <div class="client client-3"><span>Kuber Palace, Mahabaleshwar</span></div>
+      <div class="client client-4"><span>Aarya Resort, Mahabaleshwar</span></div>
+      <div class="client client-5"><span>AGY Hotels, Pune</span></div>
+      <div class="client client-6"><span>AY Plus, Golden Leaf, Pune</span></div>
+      <div class="client client-7"><span>Ashok Deluxe Hotel</span></div>
+      <div class="client client-8"><span>Mukesh Residency, Pune</span></div>
+      <div class="client client-9"><span>Hotel Kokanratna, Pune</span></div>
+      <div class="client client-10"><span>Hotel Karna, Pune</span></div>
+      <div class="client client-11"><span>Kohinoor, Pune</span></div>
+      <div class="client client-12"><span>Kunal Palace, Ahmednagar</span></div>
+      <div class="client client-13"><span>Hotel Ashoka, Ahmednagar</span></div>
+      <div class="client client-14"><span>Shiv Srushti Agro Tourism, Tapola</span></div>
+      <div class="client client-15"><span>Riverview, Tapola</span></div>
+      <div class="client client-16"><span>Hotel River Orchid, Tapola</span></div>
+      <div class="client client-17"><span>Hotel Karna, Pune</span></div>
+
+      <!-- Repeat for seamless loop -->
+      <div class="client client-1"><span>Hotel Shourya, Pune</span></div>
+      <div class="client client-2"><span>JS Excellence, Mahabaleshwar</span></div>
+      <div class="client client-3"><span>Kuber Palace, Mahabaleshwar</span></div>
+      <div class="client client-4"><span>Aarya Resort, Mahabaleshwar</span></div>
+      <div class="client client-5"><span>AGY Hotels, Pune</span></div>
+      <div class="client client-6"><span>AY Plus, Golden Leaf, Pune</span></div>
+      <div class="client client-7"><span>Ashok Deluxe Hotel</span></div>
+      <div class="client client-8"><span>Mukesh Residency, Pune</span></div>
+      <div class="client client-9"><span>Hotel Kokanratna, Pune</span></div>
+      <div class="client client-10"><span>Hotel Karna, Pune</span></div>
+      <div class="client client-11"><span>Kohinoor, Pune</span></div>
+      <div class="client client-12"><span>Kunal Palace, Ahmednagar</span></div>
+      <div class="client client-13"><span>Hotel Ashoka, Ahmednagar</span></div>
+      <div class="client client-14"><span>Shiv Srushti Agro Tourism, Tapola</span></div>
+      <div class="client client-15"><span>Riverview, Tapola</span></div>
+      <div class="client client-16"><span>Hotel River Orchid, Tapola</span></div>
+    </div>
+  </div>
+
+  <!-- Slider 2 (reverse) -->
+  <div class="slider-container">
+    <div class="slider-track reverse">
+      <!-- Same as above -->
+      <div class="client client-1"><span>Hotel Shourya, Pune</span></div>
+      <div class="client client-2"><span>JS Excellence, Mahabaleshwar</span></div>
+      <div class="client client-3"><span>Kuber Palace, Mahabaleshwar</span></div>
+      <div class="client client-4"><span>Aarya Resort, Mahabaleshwar</span></div>
+      <div class="client client-5"><span>AGY Hotels, Pune</span></div>
+      <div class="client client-6"><span>AY Plus, Golden Leaf, Pune</span></div>
+      <div class="client client-7"><span>Ashok Deluxe Hotel</span></div>
+      <div class="client client-8"><span>Mukesh Residency, Pune</span></div>
+      <div class="client client-9"><span>Hotel Kokanratna, Pune</span></div>
+      <div class="client client-10"><span>Hotel Karna, Pune</span></div>
+      <div class="client client-11"><span>Kohinoor, Pune</span></div>
+      <div class="client client-12"><span>Kunal Palace, Ahmednagar</span></div>
+      <div class="client client-13"><span>Hotel Ashoka, Ahmednagar</span></div>
+      <div class="client client-14"><span>Shiv Srushti Agro Tourism, Tapola</span></div>
+      <div class="client client-15"><span>Riverview, Tapola</span></div>
+      <div class="client client-16"><span>Hotel River Orchid, Tapola</span></div>
+
+      <!-- Repeat -->
+      <div class="client client-1"><span>Hotel Shourya, Pune</span></div>
+      <div class="client client-2"><span>JS Excellence, Mahabaleshwar</span></div>
+      <div class="client client-3"><span>Kuber Palace, Mahabaleshwar</span></div>
+      <div class="client client-4"><span>Aarya Resort, Mahabaleshwar</span></div>
+      <div class="client client-5"><span>AGY Hotels, Pune</span></div>
+      <div class="client client-6"><span>AY Plus, Golden Leaf, Pune</span></div>
+      <div class="client client-7"><span>Ashok Deluxe Hotel</span></div>
+      <div class="client client-8"><span>Mukesh Residency, Pune</span></div>
+      <div class="client client-9"><span>Hotel Kokanratna, Pune</span></div>
+      <div class="client client-10"><span>Hotel Karna, Pune</span></div>
+      <div class="client client-11"><span>Kohinoor, Pune</span></div>
+      <div class="client client-12"><span>Kunal Palace, Ahmednagar</span></div>
+      <div class="client client-13"><span>Hotel Ashoka, Ahmednagar</span></div>
+      <div class="client client-14"><span>Shiv Srushti Agro Tourism, Tapola</span></div>
+      <div class="client client-15"><span>Riverview, Tapola</span></div>
+      <div class="client client-16"><span>Hotel River Orchid, Tapola</span></div>
+    </div>
+  </div>
+
+  <!-- GSAP & Hover -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from("#our-clients h2", {
+      opacity: 0,
+      y: -50,
+      duration: 1
+    });
+
+    document.querySelectorAll('.client').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        el.style.transform = 'scale(1.05)';
+        el.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'scale(1)';
+        el.style.boxShadow = '0 10px 20px rgba(0,0,0,0.15)';
+      });
+    });
+  </script>
+</section>
+
+
+
+<section id="client-satisfaction" style="padding: 60px 20px;background: linear-gradient(135deg, #fef9f4, #f4e5d6); font-family: 'Poppins', sans-serif; color: #5a524c; text-align: center;">
+  <style>
+    .highlight {
+      font-size: 42px;
+      font-weight: 800;
+      color: #a67c52;
+      text-shadow: 1px 1px 0 #fbd6b4;
+      margin-bottom: 10px;
+    }
+
+    .flip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .flip-card {
+      background: transparent;
+      width: 260px;
+      height: 180px;
+      perspective: 1000px;
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+    }
+
+    .flip-card:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .flip-front {
+      background: #fffefc;
+      color: #5a524c;
+    }
+
+    .flip-back {
+background: linear-gradient(to right, #a67c52, #6e4a2d);
+
+      color: #fffefc;
+      transform: rotateY(180deg);
+    }
+
+    @media (max-width: 768px) {
+      .flip-card {
+        width: 90%;
+        height: 160px;
+      }
+      .highlight {
+        font-size: 32px;
+      }
+    }
+  </style>
+
+  <h2 style="font-size: 36px; color: #3a2f2f; font-weight: 700; margin-bottom: 20px;">
+    <span class="highlight" id="countClients">0</span><br>
+    Clients Satisfied Across India
+  </h2>
+
+  <div class="flip-grid">
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">We deliver excellence to every doorstep.</div>
+        <div class="flip-back">Over 1500 happy clients trust us nationwide.</div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">Hotels & Resorts trust our quality.</div>
+        <div class="flip-back">Luxury linens tailored to perfection.</div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">Premium cotton, elegant textures.</div>
+        <div class="flip-back">Blending comfort with rich aesthetics.</div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">Serving Pune, Mahabaleshwar & more.</div>
+        <div class="flip-back">Rapid delivery, personalized service.</div>
+      </div>
+    </div>
+  </div>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script>
+  const countClients = document.getElementById("countClients");
+  let counter = { val: 0 };
+
+  // Function to animate the number
+  function animateCounter() {
+    counter.val = 0; // reset to 0 each time
+    gsap.to(counter, {
+      val: 1500,
+      duration: 2.5,
+      ease: "power2.out",
+      onUpdate: () => {
+        countClients.textContent = Math.floor(counter.val) + "+";
+      }
+    });
+  }
+
+  // Animate text and cards on initial load
+  gsap.from("#client-satisfaction h2", {
+    opacity: 0,
+    y: 50,
+    duration: 1
+  });
+
+  gsap.from(".flip-card", {
+    opacity: 0,
+    y: 30,
+    stagger: 0.2,
+    duration: 1,
+    delay: 0.5
+  });
+
+  // IntersectionObserver to trigger counter animation
+  let observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(document.getElementById("client-satisfaction"));
+</script>
+
+</section>
+
+
+<!-- Footer Section -->
+<!-- <div style="background: linear-gradient(135deg, #000000, #222222, #000000);padding: 40px 20px; font-family: 'Poppins', sans-serif; position: relative; overflow: hidden;"> -->
+  <div style="background: linear-gradient(135deg, #3e1f0d, #8b5e3c, #3e1f0d); padding: 40px 20px; font-family: 'Poppins', sans-serif; position: relative; overflow: hidden;">
+
+
+  <!-- Background pattern -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.transparenttextures.com/patterns/hexellence.png'); opacity: 0.05; background-size: 200px; z-index: 0;"></div>
+
+  <!-- Footer Content -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; position: relative; z-index: 1; max-width: 1200px; margin: 0 auto;">
+
+    <!-- Column 1 - Logo & About -->
+    <div style="flex: 1 1 250px; padding: 10px;">
+  <div style="font-size: 24px; font-weight: 700; color: #fff; line-height: 1.2; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
+    Meghrup Linen<br>
+    <span style="font-size: 18px; font-weight: 500; color: #f8e4db;">And Décor</span>
+  </div>
+  <p style="color: whitesmoke; font-size: 14px; line-height: 1.6; margin-top: 10px;">
+   Meghrup Linen & Décor offers premium hotel and home linen with unmatched softness,
+  <p style="color: whitesmoke; font-size: 14px;">
+    durability, and style.
+  </p>
+  </p>
+</div>
+
+    <!-- Column 2 - Help & Info -->
+    <div style="flex: 1 1 200px; padding: 10px;">
+      <h3 style="margin-bottom: 10px; font-size: 18px; font-weight: 600; color: #fff;">Help & Information</h3>
+      <ul style="list-style: disc; padding-left: 20px; color: whitesmoke; font-size: 15px;">
+        <li><a href="#" style="text-decoration: none; color: whitesmoke;">FAQ</a></li>
+        <li><a href="#" style="text-decoration: none; color: whitesmoke;">Shipping & Delivery Policy</a></li>
+        <li><a href="#" style="text-decoration: none; color: whitesmoke;">Return & Refund Policy</a></li>
+        <li><a href="#" style="text-decoration: none; color: whitesmoke;">Terms & Conditions</a></li>
+        <li><a href="#" style="text-decoration: none; color: whitesmoke;">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 - Quick Links -->
+   <div style="flex: 1 1 180px; padding: 10px;">
+  <h3 style="margin-bottom: 10px; font-size: 18px; font-weight: 600; color: #fff;">Quick Links</h3>
+  <ul style="list-style: none; padding-left: 0; font-size: 15px; line-height: 1.6;">
+    <li><a href="index.html" style="color: whitesmoke; text-decoration: none;">HOME</a></li>
+    <li><a href="Bed_linens.html" style="color: whitesmoke; text-decoration: none;">BED LINENS</a></li>
+    <li><a href="PILLOWS_&_CUSHIONS.html" style="color: whitesmoke; text-decoration: none;">PILLOWS & CUSHIONS</a></li>
+    <li><a href="DUETS_&_PROTECTORS.html" style="color: whitesmoke; text-decoration: none;">DUETS & PROTECTORS</a></li>
+    <li><a href="TOWELS_&_MATS.html" style="color: whitesmoke; text-decoration: none;">TOWELS & MATS</a></li>
+    <li><a href="OTHERS.html" style="color: whitesmoke; text-decoration: none;">OTHERS</a></li>
+    <li><a href="Aboutus.html" style="color: whitesmoke; text-decoration: none;">ABOUT US</a></li>
+    <li><a href="contact.html" style="color: whitesmoke; text-decoration: none;">CONTACT US</a></li>
+  </ul>
+</div>
+
+
+    <!-- Column 4 - Contact Info -->
+    <div style="flex: 1 1 250px; padding: 10px;">
+  <h3 style="margin-bottom: 10px; font-size: 18px; font-weight: 600; color: #fff;">Contact Info</h3>
+  <ul style="list-style: none; padding-left: 0; font-size: 15px; color: whitesmoke; line-height: 1.8;">
+   <li>
+  <i class="fa-solid fa-phone" style="margin-right: 8px;"></i>
+  <a href="tel:+919146428456" style="text-decoration: none; color: whitesmoke;">+91 9146428456</a> /
+  <a href="tel:+919619293734" style="text-decoration: none; color: whitesmoke;">+91 9619293734</a>
+</li>
+
+    <li>
+      <i class="fa-solid fa-envelope" style="margin-right: 8px;"></i>
+      <a href="mailto:meghruplinen@gmail.com" style="text-decoration: none; color: whitesmoke;">meghruplinen@gmail.com</a>
+    </li>
+    <li>
+      <i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i>
+   <span style="color: whitesmoke;">
+    Ganesh Nagar, Saswad Road,<br>
+    Near Railway Flyover Bridge,<br>
+    Fursungi, Pune 412308
+  </span>
+
+    </li>
+  </ul>
+</div>
+
+  </div>
+
+  <!-- Social Icons -->
+  <div style="text-align: center; margin-top: 20px; z-index: 1; position: relative;">
+    <a href="https://www.facebook.com/people/Meghrup-Linen-Decor/61550862792869/?mibextid=LQQJ4d&rdid=C3fUnIgBhQmAQfzE&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16iMsrMCgv%2F%3Fmibextid%3DLQQJ4d" target="_blank" style="margin: 0 10px;"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/meghrup_linendecor/?igsh=MWxmbzM2NmNkemZ4Nw%3D%3D#" target="_blank" style="margin: 0 10px;"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram"></a>
+    <a href="https://wa.me/9146428456?text=Hello%2C%20I%20am%20interested%20in%20your%20Products." target="_blank" style="margin: 0 10px;"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+  </div>
+
+  <!-- Copyright -->
+<div style="text-align: center; margin-top: 25px; font-size: 14px; color: #fff; z-index: 1; position: relative;">
+© 2025 Meghrup Linen & Décor. All rights reserved.
+  <div style="margin-top: 5px;">Developed By DW INNOVATION PVT. LTD.</div>
+</div>
+
+</div>
+
+<!-- Font Awesome for icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+
+</body>
+</html>
+
+
+
+
